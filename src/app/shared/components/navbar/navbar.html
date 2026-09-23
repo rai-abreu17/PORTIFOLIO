@@ -1,0 +1,42 @@
+<header class="site-header">
+  <nav class="nav-shell" aria-label="Navegação principal" (keydown.escape)="closeMenu()">
+    <a class="brand" href="#inicio" (click)="closeMenu()" aria-label="Raí Abreu Machado, início">
+      <span class="brand-mark" aria-hidden="true">RA</span>
+      <span class="brand-name">Raí Abreu<br />Machado</span>
+    </a>
+
+    <div class="nav-links">
+      @for (item of navigation; track item.href) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </div>
+
+    <a class="contact-link" href="#contato">
+      <span>Contato</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M3 13 13 3M6 3h7v7" />
+      </svg>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      [attr.aria-label]="menuOpen() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-navigation"
+      (click)="onClickToggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    @if (menuOpen()) {
+      <div class="mobile-nav" id="mobile-navigation">
+        @for (item of navigation; track item.href) {
+          <a [href]="item.href" (click)="closeMenu()">{{ item.label }}</a>
+        }
+        <a href="#contato" (click)="closeMenu()">Contato</a>
+      </div>
+    }
+  </nav>
+</header>

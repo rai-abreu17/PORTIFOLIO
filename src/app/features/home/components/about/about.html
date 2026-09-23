@@ -1,0 +1,28 @@
+<section class="about section-shell" id="sobre" aria-labelledby="about-title">
+  <div class="about-copy" appReveal>
+    <p class="section-kicker">Sobre</p>
+    <h2 id="about-title">Comecei pela robótica.</h2>
+    <div class="about-text">
+      <p>
+        Meus primeiros projetos nasceram nas equipes de robótica do IEMA. Em 2022, participei da
+        FIRA Robo World Cup e voltei com dois títulos internacionais.
+      </p>
+      <p>
+        Concluí a formação full stack do Programadores do Amanhã em 2024. Hoje trabalho com
+        desenvolvimento de sistemas no TRE-MA, pesquiso no DARTiLab e participo de hackathons.
+      </p>
+    </div>
+  </div>
+
+  <div class="milestones" appReveal>
+    @for (milestone of milestones; track milestone.label) {
+      <article>
+        <strong>{{ milestone.value }}</strong>
+        <div>
+          <h3>{{ milestone.label }}</h3>
+          <p>{{ milestone.detail }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

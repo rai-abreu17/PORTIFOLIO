@@ -1,0 +1,21 @@
+<section class="stack section-shell" id="stack" aria-labelledby="stack-title">
+  <div class="stack-heading" appReveal>
+    <p class="section-kicker">Tecnologias</p>
+    <h2 id="stack-title">Ferramentas que uso</h2>
+  </div>
+
+  <div class="stack-groups" appReveal>
+    @for (group of groups; track group.title; let index = $index) {
+      <article>
+        <div class="group-heading">
+          <h3>{{ group.title }}</h3>
+        </div>
+        <ul>
+          @for (item of group.items; track item) {
+            <li><app-tool-chip [label]="item" /></li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

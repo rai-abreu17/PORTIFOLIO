@@ -1,0 +1,77 @@
+:host {
+  display: block;
+}
+.contact {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+.contact .section-kicker {
+  color: var(--color-soft-blue);
+}
+.contact-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+.contact-bottom p {
+  max-width: 32rem;
+  margin: 0;
+  line-height: 1.75;
+}
+.email-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3rem;
+  padding-block: 0.8rem;
+  color: var(--color-surface);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-focus);
+  font-size: 1.2rem;
+}
+.email-link:hover {
+  border-color: var(--color-surface);
+}
+.email-link svg {
+  width: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.professional-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.professional-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 3rem;
+  color: var(--color-surface);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.professional-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 650px) {
+  .contact-bottom {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

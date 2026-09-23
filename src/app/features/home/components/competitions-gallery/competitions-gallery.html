@@ -1,0 +1,140 @@
+<section
+  class="competitions"
+  id="competicoes"
+  aria-labelledby="competitions-title"
+  (focusin)="onFocusIn()"
+  (focusout)="onFocusOut($event)"
+>
+  <header class="gallery-header section-shell">
+    <div>
+      <p class="section-kicker">Fora do trabalho</p>
+      <h2 id="competitions-title">Competições e equipes</h2>
+    </div>
+    <div class="gallery-context">
+      <p>
+        Registros dos hackathons e das competições de robótica de que participei, de 2021 a 2026.
+      </p>
+    </div>
+  </header>
+  <div class="gallery-viewport">
+    <button
+      class="rail-nav rail-nav--prev"
+      type="button"
+      (click)="onClickPrevious()"
+      aria-label="Foto anterior"
+    >
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M15 9H3m5 5-5-5 5-5" /></svg>
+    </button>
+    <div
+      #rail
+      class="photo-rail"
+      [class.is-dragging]="dragging()"
+      [class.is-transitioning]="transitioning()"
+      tabindex="0"
+      role="region"
+      aria-roledescription="carrossel"
+      aria-label="Registros de competições e ambientes de inovação"
+      (keydown)="onRailKeydown($event)"
+      (pointerdown)="onPointerDown($event)"
+      (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp($event)"
+      (pointercancel)="onPointerUp($event)"
+      (scroll)="onScroll()"
+    >
+      <figure class="clone clone-start" aria-hidden="true" inert>
+        <div
+          class="photo-image"
+          [style.aspect-ratio]="
+            photos[photos.length - 1].width + ' / ' + photos[photos.length - 1].height
+          "
+        >
+          <img
+            [ngSrc]="photos[photos.length - 1].src"
+            fill
+            alt=""
+            sizes="(max-width: 600px) 86vw, (max-width: 1000px) 68vw, 52vw"
+          />
+        </div>
+        <figcaption>
+          <span>{{ photos[photos.length - 1].year }}</span>
+          <p>{{ photos[photos.length - 1].caption }}</p>
+        </figcaption>
+      </figure>
+      @for (photo of photos; track photo.src; let i = $index) {
+        <figure data-slide>
+          <div class="photo-image" [style.aspect-ratio]="photo.width + ' / ' + photo.height">
+            <img
+              [ngSrc]="photo.src"
+              fill
+              [alt]="photo.alt"
+              sizes="(max-width: 600px) 86vw, (max-width: 1000px) 68vw, 52vw"
+            />
+          </div>
+          <figcaption>
+            <span>{{ photo.year }}</span>
+            <p>{{ photo.caption }}</p>
+          </figcaption>
+        </figure>
+      }
+      <figure class="clone clone-end" aria-hidden="true" inert>
+        <div class="photo-image" [style.aspect-ratio]="photos[0].width + ' / ' + photos[0].height">
+          <img
+            [ngSrc]="photos[0].src"
+            fill
+            alt=""
+            sizes="(max-width: 600px) 86vw, (max-width: 1000px) 68vw, 52vw"
+          />
+        </div>
+        <figcaption>
+          <span>{{ photos[0].year }}</span>
+          <p>{{ photos[0].caption }}</p>
+        </figcaption>
+      </figure>
+    </div>
+    <button
+      class="rail-nav rail-nav--next"
+      type="button"
+      (click)="onClickNext()"
+      aria-label="Próxima foto"
+    >
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12m-5-5 5 5-5 5" /></svg>
+    </button>
+  </div>
+  <div class="gallery-pagination section-shell">
+    <div class="dots" role="tablist" aria-label="Selecionar foto">
+      @for (photo of photos; track photo.src; let i = $index) {
+        <button
+          type="button"
+          class="dot"
+          [class.is-active]="i === currentIndex()"
+          [attr.aria-current]="i === currentIndex() ? 'true' : null"
+          [attr.aria-label]="'Foto ' + (i + 1) + ' de ' + photos.length"
+          (click)="onClickDot(i)"
+        ></button>
+      }
+    </div>
+    <div class="gallery-meta">
+      <span aria-live="polite">{{ currentIndex() + 1 }} / {{ photos.length }}</span>
+      <button
+        class="autoplay-button"
+        type="button"
+        (click)="onClickToggleAutoplay()"
+        [attr.aria-pressed]="userPaused()"
+        [attr.aria-label]="userPaused() ? 'Retomar avanço automático' : 'Pausar avanço automático'"
+      >
+        @if (userPaused()) {
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 4 8 5-8 5z" /></svg>
+        } @else {
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M6 4v10M12 4v10" /></svg>
+        }
+      </button>
+    </div>
+  </div>
+  <div class="award-strip section-shell" aria-label="Premiações em destaque">
+    <article><span>Hackathon</span><strong>1º · MGest</strong><time>2026</time></article>
+    <article><span>Internacional</span><strong>2 títulos · FIRA</strong><time>2022</time></article>
+    <article>
+      <span>Governo digital</span><strong>3º · Transparência</strong><time>2026</time>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,168 @@
+@import '@fontsource-variable/sora/index.css';
+@import '@fontsource-variable/manrope/index.css';
+
+:root {
+  --color-paper: #f4f8fd;
+  --color-surface: #ffffff;
+  --color-ink: #061a33;
+  --color-muted: #52677f;
+  --color-primary: #0a5bea;
+  --color-primary-hover: #084dc6;
+  --color-deep: #051f46;
+  --color-line: #c8d7e9;
+  --color-soft-blue: #dcebff;
+  --color-focus: #8fc0ff;
+  --font-display: 'Sora Variable', 'Sora', Arial, sans-serif;
+  --font-body: 'Manrope Variable', 'Manrope', Arial, sans-serif;
+  --font-utility: 'IBM Plex Mono', 'Cascadia Mono', Consolas, monospace;
+  --page-max: 74rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-space: clamp(3.5rem, 6vw, 6rem);
+  --radius-control: 0.25rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --scrollbar-thumb: #6c8db5;
+  --scrollbar-thumb-hover: #0a5bea;
+  --scrollbar-track: #e9f0f8;
+
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a,
+button {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--color-surface);
+  background: var(--color-primary);
+}
+
+*::-webkit-scrollbar {
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 3px solid var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.section-shell {
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--page-max));
+  margin-inline: auto;
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 560ms var(--ease-out),
+    transform 560ms var(--ease-out);
+}
+
+.reveal-ready.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important; /* Accessibility override for user motion preference. */
+    animation-duration: 0.01ms !important; /* Accessibility override for user motion preference. */
+    animation-iteration-count: 1 !important; /* Accessibility override for user motion preference. */
+    transition-duration: 0.01ms !important; /* Accessibility override for user motion preference. */
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    scrollbar-color: auto;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+.section-kicker {
+  width: fit-content;
+  display: inline-block;
+  margin: 0 0 0.9rem;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+a:active,
+button:active {
+  transform: translateY(1px);
+}

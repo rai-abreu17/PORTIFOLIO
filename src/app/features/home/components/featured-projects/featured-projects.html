@@ -1,0 +1,95 @@
+<section class="projects section-shell" id="projetos" aria-labelledby="projects-title">
+  <header class="section-intro" appReveal>
+    <div>
+      <p class="section-kicker">Projetos</p>
+      <h2 id="projects-title">O que tenho desenvolvido</h2>
+    </div>
+    <p class="section-summary">
+      Sistemas no TRE-MA e projetos feitos em equipe durante hackathons.
+    </p>
+  </header>
+  <div class="project-list" appReveal>
+    @for (project of projects; track project.title; let index = $index) {
+      <article class="project" [class.project--lead]="index === 0">
+        <div class="project-meta">
+          <span>{{ project.year }}</span
+          ><span>{{ project.category }}</span>
+        </div>
+        <div class="project-main">
+          <h3>{{ project.title }}</h3>
+          <div class="project-narrative">
+            <div>
+              <span class="detail-label">Contexto</span>
+              <p>{{ project.context }}</p>
+            </div>
+            <div>
+              <span class="detail-label">Solução</span>
+              <p>{{ project.solution }}</p>
+            </div>
+          </div>
+          @if (project.participation || project.result) {
+            <div class="project-outcome">
+              @if (project.participation) {
+                <p>{{ project.participation }}</p>
+              }
+              @if (project.result) {
+                <strong>{{ project.result }}</strong>
+              }
+            </div>
+          }
+          @if (project.caseStudy; as caseStudy) {
+            <details class="case-study">
+              <summary>Ver detalhes técnicos e minha participação</summary>
+              <div class="case-content">
+                <div class="case-flow" aria-label="Fluxo conceitual da solução">
+                  @for (step of caseStudy.flow; track step; let last = $last) {
+                    <span>{{ step }}</span>
+                    @if (!last) {
+                      <i aria-hidden="true">→</i>
+                    }
+                  }
+                </div>
+                <div class="before-after">
+                  <div>
+                    <span class="detail-label">Antes</span>
+                    <p>{{ caseStudy.before }}</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">Agora</span>
+                    <p>{{ caseStudy.after }}</p>
+                  </div>
+                </div>
+                <div class="contributions">
+                  <p class="detail-label">Minha atuação</p>
+                  <div class="contribution-grid">
+                    @for (contribution of caseStudy.contributions; track contribution.area) {
+                      <div>
+                        <strong>{{ contribution.area }}</strong>
+                        <p>{{ contribution.detail }}</p>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </details>
+          }
+        </div>
+        <aside class="project-focus" aria-label="Evidências, focos e tecnologias do projeto">
+          @if (project.evidence) {
+            <strong>{{ project.evidence }}</strong>
+          }
+          @for (item of project.focus; track item) {
+            <span>{{ item }}</span>
+          }
+          @if (project.technologies) {
+            <div class="project-technologies">
+              @for (technology of project.technologies; track technology) {
+                <small><app-tool-chip [label]="technology" /></small>
+              }
+            </div>
+          }
+        </aside>
+      </article>
+    }
+  </div>
+</section>

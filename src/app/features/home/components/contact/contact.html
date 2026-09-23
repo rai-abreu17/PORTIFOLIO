@@ -1,0 +1,36 @@
+<section class="contact" id="contato" aria-labelledby="contact-title">
+  <div class="contact-shell section-shell" appReveal>
+    <p class="section-kicker">Contato</p>
+    <h2 id="contact-title">Vamos conversar?</h2>
+
+    <div class="contact-bottom">
+      <p>
+        Para falar sobre uma oportunidade de trabalho ou um projeto, me envie um e-mail ou entre em
+        contato pelo LinkedIn.
+      </p>
+
+      <a class="email-link" href="mailto:rai.abreu.machado@gmail.com">
+        <span>Escrever por e-mail</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19 19 5M8 5h11v11" />
+        </svg>
+      </a>
+    </div>
+
+    <nav class="professional-links" aria-label="Perfis profissionais">
+      @for (link of links; track link.label) {
+        <a
+          [href]="link.href"
+          [attr.target]="link.external ? '_blank' : null"
+          [attr.rel]="link.external ? 'noopener noreferrer' : null"
+        >
+          {{ link.label }}
+          @if (link.external) {
+            <span aria-hidden="true">↗</span>
+            <span class="visually-hidden"> (abre em nova aba)</span>
+          }
+        </a>
+      }
+    </nav>
+  </div>
+</section>

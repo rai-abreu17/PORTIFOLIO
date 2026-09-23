@@ -1,0 +1,35 @@
+<section class="experience" id="experiencia" aria-labelledby="experience-title">
+  <div class="section-shell experience-grid" appReveal>
+    <header class="experience-intro">
+      <p class="section-kicker">Experiência</p>
+      <h2 id="experience-title">Onde trabalho e pesquiso</h2>
+      <p>
+        Hoje atuo no TRE-MA e no DARTiLab. Antes, trabalhei com suporte de informática na Rede
+        SARAH.
+      </p>
+    </header>
+    <ol class="timeline">
+      @for (experience of experiences; track experience.organization; let index = $index) {
+        <li>
+          <article>
+            <div class="experience-heading">
+              <div>
+                <h3>{{ experience.role }}</h3>
+                <p class="organization">{{ experience.organization }}</p>
+              </div>
+              <time>{{ experience.period }}</time>
+            </div>
+            <p class="experience-summary">{{ experience.summary }}</p>
+            @if (experience.technologies) {
+              <ul aria-label="Tecnologias e áreas relacionadas">
+                @for (technology of experience.technologies; track technology) {
+                  <li><app-tool-chip [label]="technology" /></li>
+                }
+              </ul>
+            }
+          </article>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

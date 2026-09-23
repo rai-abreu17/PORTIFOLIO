@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding-block: var(--section-space);
+}
+.about-text {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+}
+.about-text p {
+  color: var(--color-muted);
+  line-height: 1.8;
+  font-size: 0.96rem;
+}
+.milestones {
+  align-self: center;
+}
+.milestones article {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
+  padding-block: 1.4rem;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line) 15%,
+    var(--color-line) 85%,
+    transparent
+  );
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 1px;
+}
+.milestones strong {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+.milestones p {
+  margin: 0.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+@media (max-width: 750px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
