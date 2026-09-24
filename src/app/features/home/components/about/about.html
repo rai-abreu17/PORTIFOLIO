@@ -1,28 +1,51 @@
 <section class="about section-shell" id="sobre" aria-labelledby="about-title">
-  <div class="about-copy" appReveal>
-    <p class="section-kicker">Sobre</p>
-    <h2 id="about-title">Comecei pela robótica.</h2>
-    <div class="about-text">
-      <p>
-        Meus primeiros projetos nasceram nas equipes de robótica do IEMA. Em 2022, participei da
-        FIRA Robo World Cup e voltei com dois títulos internacionais.
-      </p>
-      <p>
-        Concluí a formação full stack do Programadores do Amanhã em 2024. Hoje trabalho com
-        desenvolvimento de sistemas no TRE-MA, pesquiso no DARTiLab e participo de hackathons.
-      </p>
+  <div class="service-list" appReveal aria-label="Áreas em que atuo">
+    <div class="service-item">
+      <span class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="3" y="5" width="26" height="18" rx="1" />
+          <path d="M11 13l-3 3 3 3m10-6 3 3-3 3m-3-7-4 9M10 27h12m-6-4v4" />
+        </svg>
+      </span>
+      <span>Desenvolvimento de sistemas</span>
+    </div>
+    <div class="service-item">
+      <span class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="7" y="3" width="18" height="26" rx="2" />
+          <path d="M12 7h8m-5 18h2M12 14c1.5-2 6.5-2 8 0m-8 4c1.5-2 6.5-2 8 0m-8 4c1.5-2 6.5-2 8 0" />
+        </svg>
+      </span>
+      <span>Pesquisa em inteligência artificial</span>
+    </div>
+    <div class="service-item">
+      <span class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="7" y="12" width="18" height="15" rx="2" />
+          <path d="M11 12V9a5 5 0 0 1 10 0v3M5 17H3m26 0h-2M12 18h2m4 0h2m-7 5h6" />
+        </svg>
+      </span>
+      <span>Robótica e prototipagem</span>
     </div>
   </div>
 
-  <div class="milestones" appReveal>
-    @for (milestone of milestones; track milestone.label) {
-      <article>
-        <strong>{{ milestone.value }}</strong>
-        <div>
+  <div class="about-copy" appReveal>
+    <h2 id="about-title">Sobre mim</h2>
+    <p>
+      Comecei a desenvolver projetos nas equipes de robótica do IEMA. Em 2022, participei da FIRA
+      Robo World Cup e conquistei dois títulos internacionais.
+    </p>
+    <p>
+      Hoje desenvolvo sistemas no TRE-MA, pesquiso no DARTiLab e participo de hackathons. Minha
+      formação full stack foi concluída pelo Programadores do Amanhã em 2024.
+    </p>
+    <div class="milestones">
+      @for (milestone of milestones; track milestone.label) {
+        <article>
+          <strong>{{ milestone.value }}</strong>
           <h3>{{ milestone.label }}</h3>
-          <p>{{ milestone.detail }}</p>
-        </div>
-      </article>
-    }
+        </article>
+      }
+    </div>
   </div>
 </section>

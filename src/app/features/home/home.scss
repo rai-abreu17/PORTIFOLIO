@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.intro-block {
+  color: #eef5ff;
+  background: var(--color-deep);
+}
+
+.skill-ribbon {
+  background: color-mix(in srgb, var(--color-deep) 82%, #ffffff);
+}
+
+.skill-ribbon ul {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin-block: 0;
+  padding-block: 1rem;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.skill-ribbon li {
+  color: #acc7e6;
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem, 1.1vw, 0.92rem);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .skill-ribbon ul {
+    justify-content: center;
+    gap: 0.8rem 1.5rem;
+    padding-block: 1.4rem;
+  }
+}

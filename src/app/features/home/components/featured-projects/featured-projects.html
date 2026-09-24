@@ -11,32 +11,39 @@
   <div class="project-list" appReveal>
     @for (project of projects; track project.title; let index = $index) {
       <article class="project" [class.project--lead]="index === 0">
-        <div class="project-meta">
-          <span>{{ project.year }}</span
-          ><span>{{ project.category }}</span>
+        <div class="project-heading">
+          <div class="project-meta">
+            <span>{{ project.year }}</span>
+            <span>{{ project.category }}</span>
+          </div>
+          <h3>{{ project.title }}</h3>
+          @if (project.evidence) {
+            <p class="project-evidence">{{ project.evidence }}</p>
+          }
+          @if (project.result) {
+            <div class="project-result">
+              <span class="detail-label">Resultado</span>
+              <strong>{{ project.result }}</strong>
+            </div>
+          }
         </div>
         <div class="project-main">
-          <h3>{{ project.title }}</h3>
-          <div class="project-narrative">
-            <div>
+          <div class="project-narrative" [class.project-narrative--short]="!project.participation">
+            <div class="project-text-row">
               <span class="detail-label">Contexto</span>
               <p>{{ project.context }}</p>
             </div>
-            <div>
+            <div class="project-text-row">
               <span class="detail-label">Solução</span>
               <p>{{ project.solution }}</p>
             </div>
-          </div>
-          @if (project.participation || project.result) {
-            <div class="project-outcome">
-              @if (project.participation) {
+            @if (project.participation) {
+              <div class="project-text-row">
+                <span class="detail-label">Minha atuação</span>
                 <p>{{ project.participation }}</p>
-              }
-              @if (project.result) {
-                <strong>{{ project.result }}</strong>
-              }
-            </div>
-          }
+              </div>
+            }
+          </div>
           @if (project.caseStudy; as caseStudy) {
             <details class="case-study">
               <summary>Ver detalhes técnicos e minha participação</summary>
@@ -73,22 +80,19 @@
               </div>
             </details>
           }
+          <aside class="project-focus" aria-label="Focos e tecnologias do projeto">
+            @for (item of project.focus; track item) {
+              <span>{{ item }}</span>
+            }
+            @if (project.technologies) {
+              <div class="project-technologies">
+                @for (technology of project.technologies; track technology) {
+                  <small><app-tool-chip [label]="technology" /></small>
+                }
+              </div>
+            }
+          </aside>
         </div>
-        <aside class="project-focus" aria-label="Evidências, focos e tecnologias do projeto">
-          @if (project.evidence) {
-            <strong>{{ project.evidence }}</strong>
-          }
-          @for (item of project.focus; track item) {
-            <span>{{ item }}</span>
-          }
-          @if (project.technologies) {
-            <div class="project-technologies">
-              @for (technology of project.technologies; track technology) {
-                <small><app-tool-chip [label]="technology" /></small>
-              }
-            </div>
-          }
-        </aside>
       </article>
     }
   </div>

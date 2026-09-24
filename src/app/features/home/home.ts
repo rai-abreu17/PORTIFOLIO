@@ -20,14 +20,28 @@ import { TechStack } from './components/tech-stack/tech-stack';
   ],
   template: `
     <main>
-      <app-hero />
+      <div class="intro-block">
+        <app-hero />
+        <section class="skill-ribbon" aria-label="Tecnologias que uso">
+          <ul class="section-shell">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>Java</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </section>
+        <app-about />
+      </div>
       <app-featured-projects />
       <app-experience />
       <app-tech-stack />
       <app-competitions-gallery />
-      <app-about />
       <app-contact />
     </main>
   `,
+  styleUrl: './home.scss',
 })
 export class Home {}

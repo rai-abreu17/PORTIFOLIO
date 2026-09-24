@@ -5,55 +5,53 @@
   padding-block: var(--section-space) clamp(5rem, 9vw, 8rem);
   overflow: clip;
   color: var(--color-surface);
-  background: var(--color-deep);
+  background: #0b2748;
 }
 .gallery-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(19rem, 0.7fr);
-  gap: clamp(2rem, 8vw, 8rem);
-  align-items: end;
+  max-width: 48rem;
+  text-align: center;
 }
 .section-kicker {
-  color: var(--color-focus);
+  color: #84b8ff;
+}
+.gallery-header h2 {
+  color: #ffffff;
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
 }
 .gallery-context > p {
-  max-width: 31rem;
-  margin: 0;
-  color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  max-width: 38rem;
+  margin: 1rem auto 0;
+  color: #bed1e8;
   line-height: 1.7;
 }
 .gallery-viewport {
   position: relative;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 .rail-nav {
   position: absolute;
   top: 45%;
   z-index: 1;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
   display: grid;
   place-items: center;
   padding: 0;
-  color: var(--color-deep);
-  background: var(--color-surface);
-  border: none;
-  border-radius: 999px;
-  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--color-deep) 55%, transparent);
+  color: #ffffff;
+  background: transparent;
+  border: 0;
   cursor: pointer;
   transform: translateY(-50%);
   transition:
-    background 180ms,
     transform 180ms,
-    box-shadow 180ms;
+    color 180ms;
 }
 .rail-nav:hover {
-  background: var(--color-focus);
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 0.9rem 2.4rem color-mix(in srgb, var(--color-deep) 60%, transparent);
+  color: #9ac5ff;
+  transform: translateY(-50%) scale(1.1);
 }
 .rail-nav:active {
-  transform: translateY(-50%) scale(0.96);
+  transform: translateY(-50%);
 }
 .rail-nav--prev {
   left: calc(max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)) - 1.75rem);
@@ -62,12 +60,13 @@
   right: calc(max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)) - 1.75rem);
 }
 .rail-nav svg {
-  width: 1.3rem;
+  width: 1.75rem;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.75;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  filter: drop-shadow(0 1px 3px rgba(0, 12, 35, 0.8));
 }
 .gallery-pagination {
   position: relative;
@@ -133,13 +132,11 @@
   padding: 0;
   color: var(--color-surface);
   background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-surface) 28%, transparent);
-  border-radius: 999px;
+  border: 0;
   cursor: pointer;
 }
 .autoplay-button:hover {
-  color: var(--color-deep);
-  background: var(--color-surface);
+  color: #9ac5ff;
 }
 .autoplay-button svg {
   width: 1.05rem;
@@ -213,15 +210,6 @@ figcaption {
   grid-template-columns: auto 1fr;
   gap: 1.5rem;
   padding-top: 1rem;
-  background-image: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--color-surface) 24%, transparent) 20%,
-    color-mix(in srgb, var(--color-surface) 24%, transparent) 80%,
-    transparent
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
   opacity: var(--caption-opacity);
   transform: translateY(var(--caption-offset));
   will-change: transform, opacity;
@@ -239,36 +227,15 @@ figcaption p {
 .award-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
   margin-top: 2.5rem;
-  background-image: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--color-surface) 22%, transparent) 10%,
-    color-mix(in srgb, var(--color-surface) 22%, transparent) 90%,
-    transparent
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
 }
 .award-strip article {
-  min-height: 8rem;
+  min-height: 6rem;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background-image: linear-gradient(
-    180deg,
-    transparent,
-    color-mix(in srgb, var(--color-surface) 22%, transparent) 15%,
-    color-mix(in srgb, var(--color-surface) 22%, transparent) 85%,
-    transparent
-  );
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 1px 100%;
-}
-.award-strip article:last-child {
-  background-image: none;
+  gap: 0.75rem 1rem;
+  padding-block: 1rem;
 }
 .award-strip span,
 .award-strip time {
@@ -287,10 +254,6 @@ figcaption p {
   letter-spacing: -0.035em;
 }
 @media (max-width: 780px) {
-  .gallery-header {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
   .rail-nav--prev {
     left: 0.75rem;
   }
@@ -301,16 +264,7 @@ figcaption p {
     grid-template-columns: 1fr;
   }
   .award-strip article {
-    min-height: 6.5rem;
-    background-image: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 10%,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 90%,
-      transparent
-    );
-    background-position: bottom;
-    background-size: 100% 1px;
+    min-height: 0;
   }
 }
 @media (max-width: 520px) {

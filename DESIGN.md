@@ -75,21 +75,21 @@ components:
 
 ## Direção
 
-A apresentação deve parecer um portfólio pessoal: nome, ocupação, foto e trabalhos. A paleta azul original permanece. O tema escuro usa fundos azul-marinho, texto claro e azul mais luminoso para links; botões e a seção de contato usam um azul mais profundo para manter o texto branco legível. O botão no cabeçalho alterna os temas e guarda a escolha no navegador. O conteúdo usa linguagem direta em primeira pessoa, apoiada nos dados existentes, sem slogans ou promessas genéricas.
+A apresentação deve parecer um portfólio pessoal: nome, ocupação, foto e trabalhos. A paleta azul original permanece. O topo e as seções de experiência, tecnologias e galeria usam azul-marinho; projetos usam o fundo claro da paleta e contato usa azul forte. O tema escuro adapta superfícies e texto das seções que dependem de tokens. O botão no cabeçalho alterna os temas e guarda a escolha no navegador. O conteúdo usa linguagem direta em primeira pessoa, apoiada nos dados existentes, sem slogans ou promessas genéricas.
 
 ## Organização
 
-Apresentação → projetos → experiência → tecnologias → competições → sobre → contato. A largura máxima é de 74rem e as margens são fluidas. Seções usam espaçamento entre 3.5rem e 6rem. O nome tem a maior escala; títulos de seção variam entre 1.8rem e 2.7rem. Sora e Manrope continuam locais.
+Apresentação → faixa de tecnologias → sobre → projetos → experiência → tecnologias detalhadas → competições → contato. O topo usa azul-marinho da paleta original: navegação simples, texto à esquerda e retrato sobre círculo azul à direita. A faixa de tecnologias separa o hero da seção sobre, que tem áreas de atuação à esquerda e texto com três marcos à direita. A largura máxima é de 74rem e as margens são fluidas. Sora e Manrope continuam locais.
 
-Projetos são linhas com ano, contexto, solução, participação e resultado. Os detalhes técnicos do primeiro projeto ficam em um disclosure nativo acessível por teclado. Tecnologias aparecem em listas compactas. Experiência usa fundo branco no tema claro e um painel azul-marinho no escuro; galeria usa azul-marinho; contato usa azul. Não há recortes diagonais, coordenadas fictícias, numeração decorativa ou frases de efeito.
+Projetos formam uma grade aberta, sem caixas, com o primeiro trabalho em largura total e os demais em duas colunas. Ano, contexto, solução, participação e resultado permanecem legíveis. Os detalhes técnicos do primeiro projeto ficam em um disclosure nativo acessível por teclado. A experiência usa uma linha vertical com marcos, como as áreas de atuação no sobre. Tecnologias aparecem em grupos abertos com separadores discretos; a galeria usa fotos com cantos suaves e premiações sem cartões. O contato tem título à esquerda e ação à direita. Não há recortes diagonais, coordenadas fictícias, numeração decorativa ou frases de efeito.
 
 ## Fotografia e interação
 
-O retrato tem proporção 4:5 e cantos discretos. A galeria mantém as fotos reais, navegação por botões, teclado e arraste. Começa pausada e oferece avanço automático opcional. Links e botões mantêm estados de foco e interação. O menu mobile fecha por seleção e Escape. A preferência por movimento reduzido é respeitada.
+O hero usa o recorte de retrato fornecido por Raí sobre um círculo azul amplo, com brilho suave ao fundo e setas vazadas em SVG. A galeria mantém as fotos reais, navegação por botões, teclado e arraste. Começa pausada e oferece avanço automático opcional. Links e botões mantêm estados de foco e interação. O menu mobile fecha por seleção e Escape. A preferência por movimento reduzido é respeitada.
 
 ## Responsividade
 
-A apresentação se empilha abaixo de 700px; projetos abaixo de 620px. Listas de tecnologias passam para uma coluna abaixo de 800px. A navegação mobile entra abaixo de 950px. Conteúdo e imagens não devem produzir rolagem horizontal na página; a galeria mantém sua própria área rolável.
+A apresentação se empilha abaixo de 700px; projetos abaixo de 750px. Os painéis de tecnologias passam a duas colunas abaixo de 900px e a uma coluna abaixo de 620px. A navegação mobile entra abaixo de 800px. Conteúdo e imagens não devem produzir rolagem horizontal na página; a galeria mantém sua própria área rolável.
 
 ## Conteúdo
 

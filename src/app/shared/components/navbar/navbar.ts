@@ -17,11 +17,10 @@ export class Navbar {
   );
 
   protected readonly navigation: readonly NavItem[] = [
-    { label: 'Projetos', href: '#projetos' },
-    { label: 'Experiência', href: '#experiencia' },
-    { label: 'Stack', href: '#stack' },
-    { label: 'Competições', href: '#competicoes' },
+    { label: 'Início', href: '#inicio' },
     { label: 'Sobre', href: '#sobre' },
+    { label: 'Projetos', href: '#projetos' },
+    { label: 'Contato', href: '#contato' },
   ];
 
   protected onClickToggleMenu(): void {

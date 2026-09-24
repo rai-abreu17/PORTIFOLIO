@@ -1,10 +1,7 @@
 <header class="site-header">
   <nav class="nav-shell" aria-label="Navegação principal" (keydown.escape)="closeMenu()">
     <a class="brand" href="#inicio" (click)="closeMenu()" aria-label="Raí Abreu Machado, início">
-      <span class="brand-mark" aria-hidden="true">
-        <img src="/favicon.svg" alt="" width="52" height="40" />
-      </span>
-      <span class="brand-name">Raí Abreu<br />Machado</span>
+      <span class="brand-name">Raí Abreu Machado</span>
     </a>
 
     <div class="nav-links">
@@ -32,13 +29,6 @@
         <span class="theme-label">{{ darkTheme() ? 'Tema claro' : 'Tema escuro' }}</span>
       </button>
 
-      <a class="contact-link" href="#contato">
-        <span>Contato</span>
-        <svg viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M3 13 13 3M6 3h7v7" />
-        </svg>
-      </a>
-
       <button
         class="menu-button"
         type="button"
@@ -63,7 +53,6 @@
         @for (item of navigation; track item.href) {
           <a [href]="item.href" (click)="closeMenu()">{{ item.label }}</a>
         }
-        <a href="#contato" (click)="closeMenu()">Contato</a>
       </div>
     }
   </nav>
