@@ -11,24 +11,44 @@
       }
     </div>
 
-    <a class="contact-link" href="#contato">
-      <span>Contato</span>
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M3 13 13 3M6 3h7v7" />
-      </svg>
-    </a>
+    <div class="nav-actions">
+      <button
+        class="theme-button"
+        type="button"
+        [attr.aria-label]="darkTheme() ? 'Ativar tema claro' : 'Ativar tema escuro'"
+        [attr.title]="darkTheme() ? 'Ativar tema claro' : 'Ativar tema escuro'"
+        (click)="toggleTheme()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          @if (darkTheme()) {
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          } @else {
+            <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z" />
+          }
+        </svg>
+        <span class="theme-label">{{ darkTheme() ? 'Tema claro' : 'Tema escuro' }}</span>
+      </button>
 
-    <button
-      class="menu-button"
-      type="button"
-      [attr.aria-label]="menuOpen() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
-      [attr.aria-expanded]="menuOpen()"
-      aria-controls="mobile-navigation"
-      (click)="onClickToggleMenu()"
-    >
-      <span></span>
-      <span></span>
-    </button>
+      <a class="contact-link" href="#contato">
+        <span>Contato</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 13 13 3M6 3h7v7" />
+        </svg>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        [attr.aria-label]="menuOpen() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-navigation"
+        (click)="onClickToggleMenu()"
+      >
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     @if (menuOpen()) {
       <div class="mobile-nav" id="mobile-navigation">

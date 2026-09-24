@@ -5,14 +5,28 @@ description: 'Portfólio pessoal com apresentação direta, projetos legíveis e
 colors:
   paper: '#F4F8FD'
   surface: '#FFFFFF'
+  panel: '#FFFFFF'
   ink: '#061A33'
   muted: '#52677F'
   primary: '#0A5BEA'
-  primary-hover: '#084DC6'
+  action: '#0A5BEA'
+  action-hover: '#084DC6'
   deep: '#051F46'
   line: '#C8D7E9'
   soft-blue: '#DCEBFF'
   focus: '#8FC0FF'
+darkColors:
+  paper: '#0B1728'
+  panel: '#14283E'
+  ink: '#EEF5FF'
+  muted: '#B1C4D9'
+  primary: '#94C1FF'
+  action: '#2156A5'
+  action-hover: '#2867C2'
+  deep: '#0D2949'
+  line: '#36506A'
+  soft-blue: '#1C3654'
+  focus: '#B3D5FF'
 typography:
   display:
     fontFamily: 'Sora Variable, Sora, Arial, sans-serif'
@@ -31,7 +45,7 @@ spacing:
   page-max: '74rem'
 components:
   button:
-    backgroundColor: '{colors.primary}'
+    backgroundColor: '{colors.action}'
     textColor: '{colors.surface}'
     typography: '{typography.body}'
     rounded: '{rounded.DEFAULT}'
@@ -61,13 +75,13 @@ components:
 
 ## Direção
 
-A apresentação deve parecer um portfólio pessoal: nome, ocupação, foto e trabalhos. A paleta azul original permanece. O conteúdo usa linguagem direta em primeira pessoa, apoiada nos dados existentes, sem slogans ou promessas genéricas.
+A apresentação deve parecer um portfólio pessoal: nome, ocupação, foto e trabalhos. A paleta azul original permanece. O tema escuro usa fundos azul-marinho, texto claro e azul mais luminoso para links; botões e a seção de contato usam um azul mais profundo para manter o texto branco legível. O botão no cabeçalho alterna os temas e guarda a escolha no navegador. O conteúdo usa linguagem direta em primeira pessoa, apoiada nos dados existentes, sem slogans ou promessas genéricas.
 
 ## Organização
 
 Apresentação → projetos → experiência → tecnologias → competições → sobre → contato. A largura máxima é de 74rem e as margens são fluidas. Seções usam espaçamento entre 3.5rem e 6rem. O nome tem a maior escala; títulos de seção variam entre 1.8rem e 2.7rem. Sora e Manrope continuam locais.
 
-Projetos são linhas com ano, contexto, solução, participação e resultado. Os detalhes técnicos do primeiro projeto ficam em um disclosure nativo acessível por teclado. Tecnologias aparecem em listas compactas. Experiência usa fundo branco; galeria usa azul-marinho; contato usa azul. Não há recortes diagonais, coordenadas fictícias, numeração decorativa ou frases de efeito.
+Projetos são linhas com ano, contexto, solução, participação e resultado. Os detalhes técnicos do primeiro projeto ficam em um disclosure nativo acessível por teclado. Tecnologias aparecem em listas compactas. Experiência usa fundo branco no tema claro e um painel azul-marinho no escuro; galeria usa azul-marinho; contato usa azul. Não há recortes diagonais, coordenadas fictícias, numeração decorativa ou frases de efeito.
 
 ## Fotografia e interação
 

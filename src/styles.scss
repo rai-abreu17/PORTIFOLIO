@@ -4,13 +4,16 @@
 :root {
   --color-paper: #f4f8fd;
   --color-surface: #ffffff;
+  --color-panel: #ffffff;
   --color-ink: #061a33;
   --color-muted: #52677f;
   --color-primary: #0a5bea;
-  --color-primary-hover: #084dc6;
+  --color-action: #0a5bea;
+  --color-action-hover: #084dc6;
   --color-deep: #051f46;
   --color-line: #c8d7e9;
   --color-soft-blue: #dcebff;
+  --color-accent-soft-text: #dcebff;
   --color-focus: #8fc0ff;
   --font-display: 'Sora Variable', 'Sora', Arial, sans-serif;
   --font-body: 'Manrope Variable', 'Manrope', Arial, sans-serif;
@@ -29,6 +32,26 @@
   text-rendering: optimizeLegibility;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   scrollbar-width: thin;
+}
+
+:root[data-theme='dark'] {
+  --color-paper: #0b1728;
+  --color-panel: #14283e;
+  --color-ink: #eef5ff;
+  --color-muted: #b1c4d9;
+  --color-primary: #94c1ff;
+  --color-action: #2156a5;
+  --color-action-hover: #2867c2;
+  --color-deep: #0d2949;
+  --color-line: #36506a;
+  --color-soft-blue: #1c3654;
+  --color-accent-soft-text: #d5e8ff;
+  --color-focus: #b3d5ff;
+  --scrollbar-thumb: #6d91b8;
+  --scrollbar-thumb-hover: #a9cbff;
+  --scrollbar-track: #14283e;
+
+  color-scheme: dark;
 }
 
 * {
@@ -78,7 +101,7 @@ button {
 
 ::selection {
   color: var(--color-surface);
-  background: var(--color-primary);
+  background: var(--color-action);
 }
 
 *::-webkit-scrollbar {

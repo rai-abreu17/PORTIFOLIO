@@ -51,7 +51,7 @@ h1 span {
   gap: 1.4rem;
   min-height: 3rem;
   padding: 0.8rem 1.2rem;
-  background: var(--color-primary);
+  background: var(--color-action);
   color: var(--color-surface);
   text-decoration: none;
   border-radius: var(--radius-control);
@@ -60,7 +60,7 @@ h1 span {
   transition: background 180ms;
 }
 .button:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-action-hover);
 }
 .text-link {
   display: inline-flex;

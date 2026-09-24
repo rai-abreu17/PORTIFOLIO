@@ -3,11 +3,11 @@
 }
 .contact {
   padding-block: clamp(3rem, 6vw, 5rem);
-  background: var(--color-primary);
+  background: var(--color-action);
   color: var(--color-surface);
 }
 .contact .section-kicker {
-  color: var(--color-soft-blue);
+  color: var(--color-accent-soft-text);
 }
 .contact-bottom {
   display: grid;

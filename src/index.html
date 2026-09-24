@@ -10,6 +10,16 @@
       content="Portfólio de Raí Abreu Machado com projetos de desenvolvimento full stack e robótica."
     />
     <meta name="theme-color" content="#F4F8FD" />
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'dark') {
+          document.documentElement.dataset.theme = 'dark';
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0b1728');
+        }
+      } catch {
+        // The light theme remains available when storage is blocked.
+      }
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Raí Abreu Machado | Desenvolvedor Full Stack" />

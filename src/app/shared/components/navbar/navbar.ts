@@ -12,6 +12,9 @@ interface NavItem {
 })
 export class Navbar {
   protected readonly menuOpen = signal(false);
+  protected readonly darkTheme = signal(
+    typeof document !== 'undefined' && document.documentElement.dataset['theme'] === 'dark',
+  );
 
   protected readonly navigation: readonly NavItem[] = [
     { label: 'Projetos', href: '#projetos' },
@@ -27,6 +30,22 @@ export class Navbar {
 
   protected closeMenu(): void {
     this.menuOpen.set(false);
+  }
+
+  protected toggleTheme(): void {
+    const theme = this.darkTheme() ? 'light' : 'dark';
+    this.darkTheme.set(theme === 'dark');
+    document.documentElement.dataset['theme'] = theme;
+    document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute(
+      'content',
+      theme === 'dark' ? '#0b1728' : '#f4f8fd',
+    );
+
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch {
+      // Theme switching still works when storage is unavailable.
+    }
   }
 
   @HostListener('document:keydown.escape')
