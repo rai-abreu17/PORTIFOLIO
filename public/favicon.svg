@@ -1,4 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <path fill="#0A5BEA" d="M4 4h56v44L48 60H4z"/>
-  <text x="32" y="39" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle">RA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="246 319 786 539" fill="none">
+  <title>Monograma RA de Raí Abreu</title>
+  <defs>
+    <linearGradient id="frontendGradient" x1="254" y1="327" x2="663" y2="570" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061A43" />
+      <stop offset="0.52" stop-color="#0A3F9E" />
+      <stop offset="1" stop-color="#095BD8" />
+    </linearGradient>
+    <linearGradient id="backendGradient" x1="264" y1="568" x2="818" y2="850" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071E4B" />
+      <stop offset="0.48" stop-color="#0B50C7" />
+      <stop offset="1" stop-color="#06183E" />
+    </linearGradient>
+    <linearGradient id="dataFlowGradient" x1="515" y1="423" x2="790" y2="850" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7EDFFF" />
+      <stop offset="0.32" stop-color="#45AEFF" />
+      <stop offset="0.62" stop-color="#116DF2" />
+      <stop offset="0.82" stop-color="#0870F5" />
+      <stop offset="1" stop-color="#91E8FF" />
+    </linearGradient>
+    <linearGradient id="architectureGradient" x1="722" y1="327" x2="960" y2="850" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#176BE2" />
+      <stop offset="0.46" stop-color="#0A4FB7" />
+      <stop offset="1" stop-color="#061A43" />
+    </linearGradient>
+    <linearGradient id="coreGradient" x1="705" y1="525" x2="705" y2="674" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A2E73" />
+      <stop offset="1" stop-color="#0754C8" />
+    </linearGradient>
+  </defs>
+  <g id="rai-abreu-monogram">
+    <path id="frontend-layer" d="M254 327H486C591 327 663 380 663 469C663 547 610 590 526 596C561 580 582 553 589 518C597 480 584 452 555 434C531 418 502 411 470 411H315L254 327Z" fill="url(#frontendGradient)" />
+    <path id="backend-layer" d="M374 568C327 568 294 579 276 605C267 619 264 638 264 658V846L372 741L373 636L557 819C579 840 609 850 649 850H818C770 836 740 818 712 788L575 652C543 620 507 595 467 581C438 571 407 568 374 568Z" fill="url(#backendGradient)" />
+    <path id="api-data-flow" d="M527 423C568 444 599 473 618 506C634 533 632 557 611 576C593 592 565 599 527 597C560 615 592 643 622 677L706 776C731 806 766 833 818 850C770 844 736 829 705 804L565 646C536 616 506 595 473 582C447 572 414 568 375 568C424 565 466 558 500 544C528 532 545 512 550 488C555 461 547 441 527 423Z" fill="url(#dataFlowGradient)" />
+    <path id="architecture-a" d="M722 327L666 420L897 850H1024L977 766L722 327Z" fill="url(#architectureGradient)" />
+    <path id="architecture-core" d="M704 525L613 674H787L704 525Z" fill="url(#coreGradient)" />
+  </g>
 </svg>
