@@ -115,6 +115,9 @@ h3 {
 }
 summary {
   width: fit-content;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
   padding-block: 0.6rem;
   cursor: pointer;
   color: var(--color-primary);
@@ -169,10 +172,23 @@ summary:hover {
     grid-template-columns: 8rem minmax(0, 1fr);
     gap: 1.5rem;
   }
+
+  .project-narrative,
+  .before-after,
+  .contribution-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 @media (max-width: 620px) {
+  .section-intro {
+    margin-bottom: 1.75rem;
+  }
+
   .project {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-block: 2rem;
   }
   .project-meta {
     flex-direction: row;
@@ -182,10 +198,7 @@ summary:hover {
     grid-column: 1;
     margin-top: 0;
   }
-  .project-narrative,
-  .before-after,
-  .contribution-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .project-narrative {
+    margin-top: 1.1rem;
   }
 }

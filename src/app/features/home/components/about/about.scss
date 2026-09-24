@@ -55,5 +55,6 @@ h3 {
 @media (max-width: 750px) {
   .about {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }

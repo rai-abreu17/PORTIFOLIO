@@ -88,8 +88,8 @@
 }
 .dot {
   position: relative;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
   background: transparent;
   border: none;
@@ -126,8 +126,8 @@
   font-size: 0.68rem;
 }
 .autoplay-button {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
   display: grid;
   place-items: center;
   padding: 0;
@@ -289,6 +289,13 @@ figcaption p {
 @media (max-width: 780px) {
   .gallery-header {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .rail-nav--prev {
+    left: 0.75rem;
+  }
+  .rail-nav--next {
+    right: 0.75rem;
   }
   .award-strip {
     grid-template-columns: 1fr;
@@ -307,20 +314,44 @@ figcaption p {
   }
 }
 @media (max-width: 520px) {
+  .gallery-viewport {
+    margin-top: 1.75rem;
+  }
+
+  .photo-rail {
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
   .photo-image {
     width: 85vw;
-    height: auto;
+    height: clamp(13rem, 62vw, 18rem);
     max-width: none;
   }
+
+  figure img {
+    object-fit: contain;
+  }
+
   .rail-nav {
-    width: 2.5rem;
-    height: 2.5rem;
+    top: calc(clamp(13rem, 62vw, 18rem) / 2);
+    width: 2.75rem;
+    height: 2.75rem;
   }
   .rail-nav--prev {
     left: 0.5rem;
   }
   .rail-nav--next {
     right: 0.5rem;
+  }
+
+  .gallery-pagination {
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+
+  .dots {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

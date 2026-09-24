@@ -101,7 +101,7 @@
     </button>
   </div>
   <div class="gallery-pagination section-shell">
-    <div class="dots" role="tablist" aria-label="Selecionar foto">
+    <div class="dots" role="group" aria-label="Selecionar foto">
       @for (photo of photos; track photo.src; let i = $index) {
         <button
           type="button"

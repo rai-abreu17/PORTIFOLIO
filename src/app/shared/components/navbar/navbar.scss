@@ -26,6 +26,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
+  min-height: 3rem;
   color: var(--color-ink);
   text-decoration: none;
 }
@@ -212,6 +213,11 @@
   .nav-links,
   .contact-link {
     display: none;
+  }
+
+  .nav-actions {
+    grid-column: 3;
+    justify-self: end;
   }
 
   .menu-button {

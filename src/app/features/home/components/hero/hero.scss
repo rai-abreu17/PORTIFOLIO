@@ -147,7 +147,8 @@ figcaption {
 @media (max-width: 700px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    padding-block: 2.5rem 3.5rem;
   }
   .portrait-frame {
     max-width: 23rem;
@@ -155,5 +156,30 @@ figcaption {
   }
   h1 {
     font-size: clamp(3rem, 11vw, 4.5rem);
+  }
+
+  .eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    margin-top: 1.25rem;
+    line-height: 1.55;
+  }
+
+  .intro-note {
+    margin-top: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    gap: 0.5rem 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .portrait-image {
+    aspect-ratio: 1;
   }
 }

@@ -42,6 +42,8 @@ a {
   .footer-shell {
     grid-template-columns: 1fr auto;
     padding-block: 1.5rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
   }
 
   .footer-shell p:nth-child(2) {
